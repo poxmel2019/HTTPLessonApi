@@ -31,7 +31,7 @@ namespace HTTPLessonApi.Repository
 
         public List<Product> GetProductByName(string name)
         {
-            var product = Products.Where(x => x.Name == name);
+            var product = Products.Where(x => x.Name.ToLower() == name.ToLower());
             return product.ToList();
         }
     }
